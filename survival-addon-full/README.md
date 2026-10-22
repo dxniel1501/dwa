@@ -14,3 +14,4 @@ Module (Kategorie "Survival"):
 `.jar` + Meteor Client 1.21.11 + Fabric API in den `mods`-Ordner einer Fabric-1.21.11-Instanz.
 
 Hinweis: Nicht lokal kompiliert. Bei Build-Fehlern die Zeilen mit "error:" an Claude schicken.
+ 
