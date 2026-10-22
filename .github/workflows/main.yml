@@ -14,10 +14,18 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-      - run: bash ./gradlew build
+      - name: Build
+        run: |
+          GW=$(find . -name gradlew -not -path './.git/*' | head -n 1)
+          echo "gradlew gefunden: $GW"
+          test -n "$GW"
+          cd "$(dirname "$GW")"
+          bash ./gradlew build
+          mkdir -p "$GITHUB_WORKSPACE/out"
+          cp build/libs/*.jar "$GITHUB_WORKSPACE/out/"
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: snapshot
           name: Dev Build
           prerelease: true
-          files: ./build/libs/*.jar
+          files: out/*.jar
