@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "survival-addon",
+  "version": "${version}",
+  "name": "Survival Addon",
+  "description": "Freecam mit Interaktion, Activity-Finder und Nametags fuer Meteor Client.",
+  "authors": [
+    "du"
+  ],
+  "icon": "assets/template/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "de.survival.addon.SurvivalAddon"
+    ]
+  },
+  "custom": {
+    "meteor-client:color": "225,25,25",
+    "modmenu": {
+      "parent": {
+        "id": "meteor-client"
+      }
+    }
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": ["${mc_version}"],
+    "meteor-client": "*"
+  }
+}
